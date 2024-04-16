@@ -10,6 +10,6 @@ list.prepend(1);
 // console.log(list.head.next);
 console.log(list.size());
 
-console.log(list.contains());
+//console.log(list.find(3));
 
-console.log(list.atIndex(1));
+console.log(list.atIndex(list.find(3)));

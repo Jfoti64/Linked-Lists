@@ -61,7 +61,7 @@ class LinkedList {
   }
 
   atIndex(index) {
-    if (index < 0 || this.head === null) {
+    if (index < 0 || this.head === null || index === null) {
       throw new Error('Invalid index');
     }
 
@@ -100,6 +100,19 @@ class LinkedList {
       currentItem = currentItem.next;
     }
     return false;
+  }
+
+  find(value) {
+    let currentItem = this.head;
+    let index = 0;
+    while (currentItem != null) {
+      if (currentItem.value === value) {
+        return index;
+      }
+      currentItem = currentItem.next;
+      index += 1;
+    }
+    return null;
   }
   
 }
