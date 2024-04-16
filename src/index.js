@@ -9,4 +9,6 @@ list.prepend(1);
 
 //console.log(list.head.next);
 console.log(list.size());
-console.log(list.atIndex(2));
+list.pop();
+console.log(list.size());
+console.log(list.atIndex(1));

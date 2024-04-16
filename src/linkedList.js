@@ -64,9 +64,9 @@ class LinkedList {
     if (index < 0 || this.head === null) {
       throw new Error('Invalid index');
     }
-  
+
     let currentNode = this.head;
-  
+
     for (let i = 0; i < index; i += 1) {
       currentNode = currentNode.next;
       if (currentNode === null) {
@@ -74,6 +74,21 @@ class LinkedList {
       }
     }
     return currentNode;
+  }
+
+  pop() {
+    const listLength = this.size();
+    if (listLength === 0) {
+      // Handle case when the list is already empty
+      return;
+    } if (listLength === 1) {
+      // Handle case when the list has only one element
+      this.head = null;
+    } else {
+      // General case for more than one element
+      const secondLastNode = this.atIndex(listLength - 2);
+      secondLastNode.next = null;
+    }
   }
   
 }
