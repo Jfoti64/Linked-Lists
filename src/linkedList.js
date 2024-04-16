@@ -1,5 +1,4 @@
-import { th } from "date-fns/locale";
-import Node from "./node";
+import Node from './node';
 
 class LinkedList {
   constructor(head = null) {
@@ -15,7 +14,7 @@ class LinkedList {
   }
 
   getLastListItem() {
-    const listHead = this.getListHead()
+    const listHead = this.getListHead();
     if (listHead == null) {
       return listHead;
     }
@@ -49,6 +48,32 @@ class LinkedList {
       newNode.next = firstItem;
       this.head = newNode;
     }
+  }
+
+  size() {
+    let size = 0;
+    let currentNode = this.head;
+    while (currentNode != null) {
+      size += 1;
+      currentNode = currentNode.next;
+    }
+    return size;
+  }
+
+  atIndex(index) {
+    if (index < 0 || this.head === null) {
+      throw new Error('Invalid index');
+    }
+  
+    let currentNode = this.head;
+  
+    for (let i = 0; i < index; i += 1) {
+      currentNode = currentNode.next;
+      if (currentNode === null) {
+        throw new Error('Invalid index');
+      }
+    }
+    return currentNode;
   }
   
 }
