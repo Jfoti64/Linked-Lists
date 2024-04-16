@@ -14,12 +14,11 @@ class LinkedList {
   }
 
   getLastListItem() {
-    const listHead = this.getListHead();
-    if (listHead == null) {
-      return listHead;
+    if (this.head == null) {
+      return null;
     }
-    let currentItem = listHead;
-    while (currentItem.next != null) {
+    let currentItem = this.head;
+    while (currentItem.next) {
       currentItem = currentItem.next;
     }
     return currentItem;
@@ -33,7 +32,7 @@ class LinkedList {
     } else {
       // If the list is not empty, find the last item and append the new node
       const lastItem = this.getLastListItem();
-      lastItem.setNext(newNode);
+      lastItem.next = newNode;
     }
   }
 
@@ -114,6 +113,20 @@ class LinkedList {
       index += 1;
     }
     return null;
+  }
+
+  toString() {
+    if (!this.head) {
+      return 'null';
+    }
+    let stringList = '';
+    let currentNode = this.head;
+    while (currentNode) {
+      stringList += `( ${currentNode.value} ) -> `;
+      currentNode = currentNode.next;
+    }
+    stringList += 'null';
+    return stringList;
   }
 }
 
