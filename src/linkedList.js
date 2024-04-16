@@ -81,7 +81,8 @@ class LinkedList {
     if (listLength === 0) {
       // Handle case when the list is already empty
       return;
-    } if (listLength === 1) {
+    }
+    if (listLength === 1) {
       // Handle case when the list has only one element
       this.head = null;
     } else {
@@ -114,7 +115,6 @@ class LinkedList {
     }
     return null;
   }
-  
 }
 
 export default LinkedList;

@@ -1,5 +1,3 @@
-import LinkedList from './linkedList';
-
 class Node {
   constructor(value = null) {
     this.value = value;
