@@ -1,3 +1,4 @@
+import { th } from "date-fns/locale";
 import Node from "./node";
 
 class LinkedList {
@@ -38,7 +39,16 @@ class LinkedList {
   }
 
   prepend(value) {
-    
+    const newNode = new Node(value);
+    if (this.head === null) {
+      // If the list is empty, set the new node as the head of the list
+      this.head = newNode;
+    } else {
+      // If the list is not empty, find the first item and prepend the new node
+      const firstItem = this.head;
+      newNode.next = firstItem;
+      this.head = newNode;
+    }
   }
   
 }
