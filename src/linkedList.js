@@ -90,6 +90,17 @@ class LinkedList {
       secondLastNode.next = null;
     }
   }
+
+  contains(value) {
+    let currentItem = this.head;
+    while (currentItem != null) {
+      if (currentItem.value === value) {
+        return true;
+      }
+      currentItem = currentItem.next;
+    }
+    return false;
+  }
   
 }
 

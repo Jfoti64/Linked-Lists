@@ -7,8 +7,9 @@ const list = new LinkedList(node1);
 list.append(3);
 list.prepend(1);
 
-//console.log(list.head.next);
+// console.log(list.head.next);
 console.log(list.size());
-list.pop();
-console.log(list.size());
+
+console.log(list.contains());
+
 console.log(list.atIndex(1));
